@@ -1,0 +1,6 @@
+{
+  "app_titulo": "Título",
+  "main_titulo": "Flutter Demo Pagina Inicial",
+  "contador": "Você apertou o botão estas vezes:",
+  "btncount_placeholder": "Incrementar"
+}
