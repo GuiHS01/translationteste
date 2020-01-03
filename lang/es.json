@@ -1,0 +1,6 @@
+{
+  "app_titulo": "Título",
+  "main_titulo": "Página de inicio de demostración de Flutter",
+  "contador": "Has presionado el botón varias veces:",
+  "btncount_placeholder": "Incremento"
+}

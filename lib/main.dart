@@ -9,19 +9,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //se tirar o comentário e trocar o '' pelo código o erro aparece.
-      title: 'titulo do app', //AppLocalizations.of(context).translate('app_titulo'),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(
-        //se tirar o comentário e trocar o '' pelo código o erro aparece.
-          title: 'titulo da tela'), //AppLocalizations.of(context).translate('main_titulo')),
+      onGenerateTitle: (context) =>
+          AppLocalizations.of(context).translate('app_titulo'),
+      home: MyHomePage(),
       supportedLocales: [
         Locale('en', 'US'),
-        Locale('pt-BR', 'BR'),
-        // Locale('pt-BR'),
-        // Locale('pt_BR','BR'),
+        Locale('pt', 'BR'),
       ],
       localizationsDelegates: [
         AppLocalizations.delegate,
@@ -42,9 +38,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
+  MyHomePage({Key key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -63,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(AppLocalizations.of(context).translate('main_titulo')),
       ),
       body: Center(
         child: Column(
