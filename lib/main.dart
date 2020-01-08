@@ -12,12 +12,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      //Requisição da tradução para o idioma do dispositivo.
       onGenerateTitle: (context) =>
           AppLocalizations.of(context).translate('app_titulo'),
       home: MyHomePage(),
       supportedLocales: [
+        //Informo qual idioma estou dando suporte
         Locale('en', 'US'),
         Locale('pt', 'BR'),
+        Locale('es', 'ES'),
+        Locale('es', 'AR'),
+        Locale('es', 'MX'),
       ],
       localizationsDelegates: [
         AppLocalizations.delegate,
@@ -57,15 +62,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //Requisição da tradução para o idioma do dispositivo.
         title: Text(AppLocalizations.of(context).translate('main_titulo')),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              AppLocalizations.of(context).translate('contador'),
-            ),
+            //Requisição da tradução para o idioma do dispositivo.
+            Text(AppLocalizations.of(context).translate('contador')),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
@@ -75,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
+        //Requisição da tradução para o idioma do dispositivo.
         tooltip: AppLocalizations.of(context).translate('btncount_placeholder'),
         child: Icon(Icons.add),
       ),
